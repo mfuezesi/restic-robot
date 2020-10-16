@@ -96,7 +96,8 @@ func (b *backup) Run() {
 		}
 	}
 
-	cmd := exec.Command("restic", "backup", "-q", "-v", b.Args)
+	argsx := strings.Fields("restic backup -q -v " + b.Args)
+	cmd := exec.Command(argsx[0], argsx[1:]...)
 	errbuf := bytes.NewBuffer(nil)
 	outbuf := bytes.NewBuffer(nil)
 	cmd.Stderr = errbuf
