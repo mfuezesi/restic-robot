@@ -6,5 +6,5 @@ fast:
 
 build:
 	docker build \
-		-t southclaws/restic-robot \
+		-t mfuezesi/restic-robot:v0.10.0 \
 		.
